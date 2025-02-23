@@ -1,42 +1,96 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.appBg {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(52, 78, 108, 1) 75%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 30%;
+  height: 85%;
+  background-color: rgb(255, 247, 247);
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0.1rem 1rem 0.5rem rgba(52, 78, 108, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  background-color: rgb(182, 182, 182);
+}
+
+.appTitle {
+  font-family: "Delicious Handrawn", serif;
+  font-weight: 450;
+  font-style: normal;
+  font-size: 4rem;
+  color: rgba(52, 78, 108, 1);
+}
+
+.inputShowScreen {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+
+input {
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  font-family: "Delicious Handrawn", serif;
+  font-weight: 450;
+  font-style: normal;
+  font-size: 2rem;
+  text-align: end;
+  color: rgba(52, 78, 108, 1);
+}
+
+.btnContainer {
+  width: 90%;
+  height: 50%;
+  border-radius: 1rem;
+  border: 0.1rem solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
+.btnContainer div {
+  width: 95%;
+  height: 22%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+}
+
+button {
+  width: 25%;
+  height: 100%;
+  border-radius: 1rem;
+  font-family: "Delicious Handrawn", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.5rem;
+  text-align: end;
+  color: rgb(25, 56, 92);
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+button:hover {
+  font-size: 3rem;
+  transform: scale(1.023);
+  background-color: rgb(25, 56, 92);
+  color: white;
 }
