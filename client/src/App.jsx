@@ -1,38 +1,145 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
+const initData = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  contact: "",
+  gender: "male",
+  url: "",
+  programingLang: "",
+  about: "",
+};
 function App() {
+  const [data, setData] = useState(initData);
+  const [subject, setSubject] = useState({
+    english: false,
+    maths: false,
+    physics: false,
+  });
+  const [resume, setResume] = useState("");
+  console.log("resume", typeof resume);
+
+  const handleOnchange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+  const handleUploadFile = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      setResume(file);
+    }
+  };
+  console.log("data", data);
+  const handleReset = () => {
+    setData(initData);
+  };
+  const handleSubmit = () => {
+    e.preventDefault();
+    //send data via api
+  };
   return (
     <div className="formContainer">
       <h1>Form Submission</h1>
       <fieldset>
         <form>
-          <label>First Name*</label>
-          <input type="text" placeholder="Enter First Name" />
-          <label>Last Name*</label>
-          <input type="text" placeholder="Enter Last Name" />
-          <label>Email*</label>
-          <input type="text" placeholder="Enter Email" />
-          <label>Contact*</label>
-          <input type="text" placeholder="Enter Mobile Number" />
-          <label>Gender*</label>
-          <input type="radio" />
+          <label htmlFor="firstNameId">First Name*</label>
+          <input
+            type="text"
+            placeholder="Enter First Name"
+            id="firstNameId"
+            name="firstName"
+            onChange={(e) => handleOnchange(e)}
+            value={data.firstName}
+          />
+          <label htmlFor="lastNameId">Last Name*</label>
+          <input
+            type="text"
+            placeholder="Enter Last Name"
+            id="lastNameId"
+            name="lastName"
+            onChange={(e) => handleOnchange(e)}
+            value={data.lastName}
+          />
+          <label htmlFor="emailId">Email*</label>
+          <input
+            type="text"
+            placeholder="Enter Email"
+            id="emailId"
+            name="email"
+            onChange={(e) => handleOnchange(e)}
+            value={data.email}
+          />
+          <label htmlFor="contactId">Contact*</label>
+          <input
+            type="text"
+            placeholder="Enter Mobile Number"
+            id="contactId"
+            name="contact"
+            onChange={(e) => handleOnchange(e)}
+            value={data.contact}
+          />
+          <label htmlFor="genderId">Gender*</label>
+          <input
+            type="radio"
+            checked={data.gender === "male"}
+            onChange={(e) => handleOnchange(e)}
+            name="gender"
+            value="male"
+          />
           Male
-          <input type="radio" />
+          <input
+            type="radio"
+            checked={data.gender === "female"}
+            onChange={(e) => handleOnchange(e)}
+            name="gender"
+            value="female"
+          />
           Female
           <label>Your best Subject*</label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="subject"
+            onChange={(e) =>
+              setSubject({ ...subject, english: e.target.checked })
+            }
+          />
           English
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="subject"
+            onChange={(e) =>
+              setSubject({ ...subject, maths: e.target.checked })
+            }
+          />
           Maths
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="subject"
+            onChange={(e) =>
+              setSubject({ ...subject, physics: e.target.checked })
+            }
+          />
           Physics
-          <label>Upload Resume*</label>
-          <input type="file" />
-          <label>URL*</label>
-          <input type="url" placeholder="Enter Url" />
+          <label htmlFor="fileId">Upload Resume*</label>
+          <input
+            type="file"
+            id="fileId"
+            name="file"
+            onChange={(e) => handleUploadFile(e)}
+          />
+          <label htmlFor="urlId">URL*</label>
+          <input
+            type="url"
+            placeholder="Enter Url"
+            id="urlId"
+            name="url"
+            onChange={(e) => handleOnchange(e)}
+            value={data.url}
+          />
           <label>Select your Choice</label>
-          <select>
+          <select onChange={(e) => handleOnchange(e)} name="programingLang">
             <option disabled></option>
             <optgroup label="Front-End">
               <option>React Js</option>
@@ -46,10 +153,15 @@ function App() {
             </optgroup>
           </select>
           <label>About*</label>
-          <textarea cols={55} rows={5} placeholder="About your self.." />
+          <textarea
+            rows={5}
+            placeholder="About your self.."
+            onChange={(e) => handleOnchange(e)}
+            value={data.about}
+          />
           <label>Submit OR Reset</label>
-          <button>Reset</button>
-          <button>Submit</button>
+          <button onClick={handleReset}>Reset</button>
+          <button onClick={handleSubmit}>Submit</button>
         </form>
       </fieldset>
     </div>
