@@ -18,11 +18,15 @@ function App() {
     maths: false,
     physics: false,
   });
+  console.log(subject);
   const [resume, setResume] = useState("");
   console.log("resume", typeof resume);
 
   const handleOnchange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
+  };
+  const handleSubjectchange = (e) => {
+    setSubject({ ...subject, [e.target.name]: e.target.checked });
   };
   const handleUploadFile = (e) => {
     const file = e.target.files[0];
@@ -100,26 +104,20 @@ function App() {
           <label>Your best Subject*</label>
           <input
             type="checkbox"
-            name="subject"
-            onChange={(e) =>
-              setSubject({ ...subject, english: e.target.checked })
-            }
+            name="english"
+            onChange={(e) => handleSubjectchange(e)}
           />
           English
           <input
             type="checkbox"
-            name="subject"
-            onChange={(e) =>
-              setSubject({ ...subject, maths: e.target.checked })
-            }
+            name="maths"
+            onChange={(e) => handleSubjectchange(e)}
           />
           Maths
           <input
             type="checkbox"
-            name="subject"
-            onChange={(e) =>
-              setSubject({ ...subject, physics: e.target.checked })
-            }
+            name="physics"
+            onChange={(e) => handleSubjectchange(e)}
           />
           Physics
           <label htmlFor="fileId">Upload Resume*</label>
@@ -140,7 +138,7 @@ function App() {
           />
           <label>Select your Choice</label>
           <select onChange={(e) => handleOnchange(e)} name="programingLang">
-            <option disabled></option>
+            <option>Programming Languages</option>
             <optgroup label="Front-End">
               <option>React Js</option>
               <option>Angular</option>

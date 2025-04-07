@@ -1,6 +1,11 @@
 body {
-  background-color: rgb(240, 240, 240);
-  margin: 1rem;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(52, 78, 108, 1) 100%
+  );
+  margin: 2rem;
 }
 
 fieldset {
@@ -9,9 +14,10 @@ fieldset {
 
 .formContainer {
   width: 30%;
-  background-color: white;
+  background-color: rgb(200, 163, 214);
+  color: rgb(60, 3, 77);
   border-radius: 1rem;
-  box-shadow: 0 0 1rem 0.1rem gray;
+  box-shadow: 0 0 1rem 0.1rem rgb(209, 209, 209);
   margin: auto;
   padding: 1rem;
   font-family: roboto;
@@ -21,8 +27,9 @@ fieldset {
 
 h1 {
   font-family: roboto;
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   text-align: center;
+  color: rgb(110, 2, 83);
 }
 
 label {
@@ -37,6 +44,7 @@ input {
   width: 100%;
   height: 1.7rem;
   border: 0.01rem solid gray;
+  border-radius: 0.5rem;
 }
 
 input[type="radio"],
@@ -44,10 +52,10 @@ input[type="checkbox"] {
   display: inline;
   text-align: center;
   width: calc(100% / 5);
-  height: auto;
+  height: 1.2rem;
   margin-top: 0.5rem;
   cursor: pointer;
-  color: red;
+  accent-color: rgb(110, 2, 83);
 }
 
 input[type="radio"] {
@@ -64,7 +72,7 @@ button {
   margin-left: 3.63%;
   border-radius: 0.5rem;
   border: none;
-  background-color: black;
+  background-color: rgb(110, 2, 83);
   color: white;
   font-weight: bold;
   font-size: 1.1rem;
@@ -78,4 +86,6 @@ textarea {
 select {
   width: 100%;
   height: 2rem;
+  font-weight: bold;
+  color: rgb(110, 2, 83);
 }
