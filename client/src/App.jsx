@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./App.css";
 
 function App() {
@@ -31,13 +32,25 @@ function App() {
       .then((data) => setJoke(data[0].joke))
       .catch((err) => console.log(err));
   };
+  const fetchJokeByAxios = async (api) => {
+    try {
+      const res = await axios.get(api, {
+        headers: { "X-Api-Key": "y1K8N4jnvJkEGnbqY0naig==BnpGcr1n5KW0jHZo" },
+      });
+      setJoke(res.data[0].joke);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="jokeContainer">
       <h1>Joke Genarator Using React And Joke API</h1>
       <button
         onClick={() =>
           /*  fetchJokeByXmlHttpRequest("https://api.api-ninjas.com/v1/jokes") */
-          fetchJokeByFetchApi("https://api.api-ninjas.com/v1/jokes")
+          /*  fetchJokeByFetchApi("https://api.api-ninjas.com/v1/jokes") */
+          fetchJokeByAxios("https://api.api-ninjas.com/v1/jokes")
         }
       >
         Click To Generate A New Joke.
