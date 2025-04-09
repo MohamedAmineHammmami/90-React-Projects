@@ -23,13 +23,21 @@ function App() {
       }
     };
   };
-
+  const fetchJokeByFetchApi = (api) => {
+    fetch(api, {
+      headers: { "X-Api-Key": "y1K8N4jnvJkEGnbqY0naig==BnpGcr1n5KW0jHZo" },
+    })
+      .then((req) => req.json())
+      .then((data) => setJoke(data[0].joke))
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="jokeContainer">
       <h1>Joke Genarator Using React And Joke API</h1>
       <button
         onClick={() =>
-          fetchJokeByXmlHttpRequest("https://api.api-ninjas.com/v1/jokes")
+          /*  fetchJokeByXmlHttpRequest("https://api.api-ninjas.com/v1/jokes") */
+          fetchJokeByFetchApi("https://api.api-ninjas.com/v1/jokes")
         }
       >
         Click To Generate A New Joke.
