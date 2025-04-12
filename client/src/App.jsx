@@ -33,7 +33,18 @@ function App() {
       }
     }
   };
-  const regexPassValidation = (e) => {};
+  const regexPassValidation = (e) => {
+    const currentPass = e.target.value;
+    const regExp = [/^.{8,}$/, /[a-z]/, /[A-Z]/, /[0-9]/, /[^a-zA-Z0-9]/];
+    setPassword(currentPass);
+    setConditions((prev) =>
+      prev.map((el, i) => {
+        console.log(regExp[i]);
+        return { ...el, state: regExp[i].test(currentPass) };
+      })
+    );
+  };
+
   const handleRevealPass = () => {
     setRevealPass(!revealPass);
   };
@@ -45,7 +56,7 @@ function App() {
         <input
           type={revealPass ? "password" : "text"}
           placeholder="Enter your password"
-          onChange={(e) => yupPassValidation(e)}
+          onChange={(e) => regexPassValidation(e)}
           value={password}
         />
         <div onClick={handleRevealPass}>
