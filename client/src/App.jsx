@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Eye, EyeOff, CircleOff, CircleCheckBig } from "lucide-react";
-import { passSchema, initialConditions } from "./utilis/passValidation.js";
+import {
+  passSchema,
+  initialConditions,
+  genRandomPass,
+  patterns,
+} from "./utilis/passValidation.js";
 
 function App() {
   const [revealPass, setRevealPass] = useState(true);
   const [password, setPassword] = useState("");
   const [conditions, setConditions] = useState(initialConditions);
 
+  //password validation using yup package
   const yupPassValidation = async (e) => {
     const currentPass = e.target.value;
     setPassword(currentPass);
@@ -33,10 +39,11 @@ function App() {
       }
     }
   };
+  //password validation using regex
   const regexPassValidation = (e) => {
     const currentPass = e.target.value;
     const regExp = [/^.{8,}$/, /[a-z]/, /[A-Z]/, /[0-9]/, /[^a-zA-Z0-9]/];
-    setPassword(currentPass);
+    setPassword(() => currentPass);
     setConditions((prev) =>
       prev.map((el, i) => {
         console.log(regExp[i]);
@@ -47,6 +54,14 @@ function App() {
 
   const handleRevealPass = () => {
     setRevealPass(!revealPass);
+  };
+  const handleGenPass = () => {
+    setPassword(genRandomPass(12, patterns));
+    setConditions((prev) => {
+      return prev.map((el) => {
+        return { ...el, state: true };
+      });
+    });
   };
 
   return (
@@ -67,6 +82,10 @@ function App() {
           )}
         </div>
       </div>
+
+      <button className="genPassBtn" onClick={handleGenPass}>
+        Generate Strong Password
+      </button>
 
       {conditions.map((el) => {
         return (

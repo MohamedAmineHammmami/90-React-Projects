@@ -29,7 +29,7 @@ h1 {
   font-size: 5vh;
   font-weight: 900;
   color: #000428;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: center;
   text-decoration: underline;
   text-shadow: 0.1rem 0.1rem #047755;
@@ -79,4 +79,22 @@ input[type="password"]::-ms-reveal {
 span {
   width: 100%;
   color: #921400;
+}
+
+.passSuggestion {
+  display: flex;
+  width: 80%;
+  height: 5vh;
+}
+
+.genPassBtn {
+  height: 3.5vh;
+  margin-bottom: 0.5rem;
+  background-color: #000428;
+  color: white;
+}
+
+.genPassBtn:hover {
+  transform: scale(1.01);
+  background-color: #184ea0;
 }
