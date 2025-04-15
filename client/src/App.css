@@ -10,21 +10,32 @@ body {
     #dbd5a4,
     #649173
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-top: 2.5rem;
 }
 
 .container {
-  width: 80vw;
+  width: 70vw;
   background-color: white;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 0.2rem 0.2rem rgb(117, 124, 20);
+  border-radius: 1rem;
+}
+
+.header {
+  width: inherit;
+  height: 4.4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: antiquewhite;
+  margin: 3rem;
+  gap: 2rem;
 }
 
 h1 {
-  width: 80vw;
-  background-color: antiquewhite;
-  text-align: center;
   font-family: Roboto;
   font-size: 4rem;
 }
@@ -63,6 +74,10 @@ button {
   background-color: #649173;
   color: white;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 button:hover {
@@ -70,7 +85,8 @@ button:hover {
 }
 
 .map {
-  width: 80vw;
-  height: 60vh;
+  width: inherit;
+  height: 55vh;
   margin: 2rem 0 0 0;
+  border-radius: inherit;
 }
