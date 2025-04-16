@@ -6,16 +6,19 @@
   box-shadow: 0 0 0.4vh 0.2vh rgb(255, 174, 0);
   box-sizing: border-box;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .dicePointLeft,
 .dicePointLeftBottom,
 .dicePointRight,
-.dicePointRightBottom {
-  box-shadow: 0 0 0.5 0.5 gray;
+.dicePointRightBottom,
+.dicePointCenter,
+.dicePointMiddleLeft,
+.dicePointMiddleRight {
+  position: absolute;
+  box-shadow: 0vh 0vh 0 0.17vh rgb(51, 51, 51);
+  border-radius: 50%;
+  border: none;
 }
 
 .dicePointLeft {
@@ -35,5 +38,20 @@
 
 .dicePointRightBottom {
   bottom: 1vh;
+  right: 1vh;
+}
+
+.dicePointCenter {
+  left: calc(50% - 35px / 2);
+  top: calc(50% - 35px / 2);
+}
+
+.dicePointMiddleLeft {
+  top: calc(50% - 35px / 2);
+  left: 1vh;
+}
+
+.dicePointMiddleRight {
+  top: calc((50% - 35px / 2));
   right: 1vh;
 }

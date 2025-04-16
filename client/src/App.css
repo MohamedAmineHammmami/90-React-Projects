@@ -7,18 +7,29 @@ body {
   margin-top: 15%;
 }
 
+h1 {
+  color: white;
+  font-size: 5vh;
+}
+
+span {
+  color: rgb(241, 186, 2);
+}
+
 .diceContainer {
   width: 50%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   gap: 10vh;
 }
 
-.dices {
-  width: 100%;
+.dices,
+.shake {
+  width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10vh;
 }
 
@@ -27,10 +38,35 @@ button {
   height: 7vh;
   border-radius: 1rem;
   font-size: 3vh;
-  font-weight: bolder;
-  box-shadow: 0 0 0.4rem 0.1rem goldenrod;
 }
 
 button:hover {
-  transform: scale(1.1);
+  scale: 1.05;
+  font-weight: bold;
+}
+
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: 500ms;
+}
+
+@keyframes shake {
+  0% {
+    transform: skewY(-15deg);
+  }
+  5% {
+    transform: skewY(15deg);
+  }
+  10% {
+    transform: skewY(-15deg);
+  }
+  15% {
+    transform: skewY(15deg);
+  }
+  20% {
+    transform: skewY(0deg);
+  }
+  100% {
+    transform: skewY(0deg);
+  }
 }
