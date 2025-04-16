@@ -1,0 +1,39 @@
+.dicePointsContainer {
+  width: 15vh;
+  height: 15vh;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.4vh 0.2vh rgb(255, 174, 0);
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dicePointLeft,
+.dicePointLeftBottom,
+.dicePointRight,
+.dicePointRightBottom {
+  box-shadow: 0 0 0.5 0.5 gray;
+}
+
+.dicePointLeft {
+  left: 1vh;
+  top: 1vh;
+}
+
+.dicePointRight {
+  right: 1vh;
+  top: 1vh;
+}
+
+.dicePointLeftBottom {
+  bottom: 1vh;
+  left: 1vh;
+}
+
+.dicePointRightBottom {
+  bottom: 1vh;
+  right: 1vh;
+}
