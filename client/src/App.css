@@ -1,42 +1,98 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  width: 45%;
+  height: 40vh;
+  background-color: rgb(32, 60, 77);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.4rem 0.4rem rgb(15, 35, 49);
+  margin-top: 10vh;
+  gap: 2vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1 {
+  font-family: roboto;
+  color: white;
+  margin: 5vh 0 4vh 0;
 }
 
-.card {
-  padding: 2em;
+.btns {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
 }
 
-.read-the-docs {
-  color: #888;
+.result {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+button {
+  width: 30%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  color: #0f2027;
+  font-weight: bold;
+  font-size: 2vh;
+  transition: 500ms;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  color: #0f2027;
+  transition: 300ms;
+}
+
+button:hover {
+  scale: 1.1;
+  background-color: #0f2027;
+  color: white;
+}
+
+button:hover .icon {
+  scale: 1.1;
+  color: white;
+}
+
+h2 {
+  color: white;
+  font-family: roboto;
+  display: inline;
+}
+
+b {
+  font-size: 2vh;
+  color: white;
+  font-family: roboto;
+}
+
+h3 {
+  color: white;
+  font-family: roboto;
 }
