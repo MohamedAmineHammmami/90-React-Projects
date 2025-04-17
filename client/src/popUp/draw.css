@@ -1,0 +1,39 @@
+.drawPopup {
+  width: 20vw;
+  height: 5vh;
+  background-color: #2c5364;
+  color: white;
+  font-weight: bold;
+  font-family: roboto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.3vh 0.3vh rgb(15, 35, 49);
+  animation: popup 700ms ease-in;
+}
+
+.popupRemoval {
+  width: 23px;
+  height: 23px;
+  color: "white";
+  position: absolute;
+  top: 0.5vh;
+  right: 1vh;
+}
+
+.popupRemoval:hover {
+  scale: 1.2;
+}
+
+@keyframes popup {
+  from {
+    top: 0;
+  }
+  to {
+    top: 25vh;
+    position: fixed;
+  }
+}
