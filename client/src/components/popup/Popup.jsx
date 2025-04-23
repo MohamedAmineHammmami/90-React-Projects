@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./popup.css";
 import { MdOutlineAddTask } from "react-icons/md";
 import { MdOutlineDeleteSweep } from "react-icons/md";
 import { MdEditNote } from "react-icons/md";
 
-function Popup({ msg }) {
+const icons = [
+  { class: "editPopup", jsx: <MdEditNote className="popupIcon" /> },
+  { class: "addPopup", jsx: <MdOutlineAddTask className="popupIcon" /> },
+  {
+    class: "deletePopup",
+    jsx: <MdOutlineDeleteSweep className="popupIcon" />,
+  },
+];
+
+function Popup({ msg, visibility, classname }) {
   return (
-    <div className="editPopup">
-      <p>this is the message from the popup!</p>
-      <MdEditNote className="popupIcon" />
+    <div className={classname} style={{ display: visibility }}>
+      <p>{msg}</p>
+      {icons.map((el) => {
+        if (el.class === classname) {
+          return el.jsx;
+        }
+      })}
     </div>
   );
 }

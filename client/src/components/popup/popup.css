@@ -14,19 +14,16 @@
   align-items: center;
   animation-name: jackInTheBox;
   animation-duration: 500ms;
-  visibility: hidden;
 }
 
 .deletePopup {
   background-color: tomato;
   animation-name: zoomOutDown;
-  animation-duration: 500ms;
 }
 
 .editPopup {
   background-color: #155799;
   animation-name: zoomOutUp;
-  animation-duration: 500ms;
 }
 
 .popupIcon {

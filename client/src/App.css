@@ -117,3 +117,15 @@ h1 {
 .hover:hover {
   scale: 1.1;
 }
+
+.taskInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: whitesmoke;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: bold;
+  height: 5vh;
+  border-radius: 1rem;
+}
