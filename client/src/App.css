@@ -1,42 +1,98 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  background: #1d4350; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a43931,
+    #1d4350
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #a43931,
+    #1d4350
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-top: 3vh;
+}
+
+.quizContainer {
+  width: 20vw;
+  border-radius: 1rem;
+  font-family: roboto;
+  margin: auto;
+  box-shadow: 0 0 0.4vh 0.4vh #4e4e4e;
+  background-color: #a43931;
+  color: whitesmoke;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+b {
+  margin-bottom: 5vh;
+}
+
+h1 {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h2 {
+  display: inline;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+  display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+fieldset {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1vh;
 }
 
-.card {
-  padding: 2em;
+span {
+  font-weight: bold;
 }
 
-.read-the-docs {
-  color: #888;
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1vh;
+}
+
+button {
+  width: 40%;
+  height: 4vh;
+  margin-top: 1vh;
+  font-weight: bold;
+  font-family: roboto;
+  font-size: 1rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  background-color: #1d4350;
+  color: white;
+}
+
+button:hover {
+  scale: 1.1;
+  color: white;
+}
+
+input {
+  width: 2vh;
+  height: 2vh;
+  accent-color: #1d4350;
+}
+
+.score {
+  display: flex;
+  gap: 2vh;
+  font-family: roboto;
+  font-weight: bold;
+  font-size: 4vh;
+  justify-content: center;
 }

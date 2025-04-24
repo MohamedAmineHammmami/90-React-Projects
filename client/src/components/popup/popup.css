@@ -1,0 +1,39 @@
+.popup {
+  width: 80%;
+  height: 10%;
+  background-color: #1d4350;
+  animation: heartBeat 500ms ease-in-out;
+  position: absolute;
+  top: 30%;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  gap: 1vh;
+  left: calc((100% - 81%) / 2);
+  padding: 0 0.5vh 0 0.5vh;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(1.3);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.3);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
