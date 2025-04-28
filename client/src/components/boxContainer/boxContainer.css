@@ -1,0 +1,14 @@
+.boxContainer {
+  width: 60vw;
+  height: 90vh;
+  background-color: rgb(223, 226, 226);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  place-content: center;
+  gap: 0.1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 0.8rem 0.4rem rgb(163, 162, 162);
+  border-radius: 1rem;
+}
