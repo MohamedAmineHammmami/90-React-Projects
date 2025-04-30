@@ -1,0 +1,17 @@
+.updown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0.2rem;
+}
+
+.icon {
+  color: gray;
+  height: 2.5vh;
+  width: 2.5vh;
+}
+
+.icon:hover {
+  scale: 1.1;
+  color: #000046;
+}
